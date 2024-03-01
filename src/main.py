@@ -7,7 +7,7 @@ from retrieve import retriever
 from generate import generator
 
 Huggingface_api_key = getpass()
-repo_id = "meta-llama/Llama-2-7b"
+repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 llm = HuggingFaceEndpoint(repo_id = repo_id, temperature = 0.5, max_new_tokens = 128, huggingfacehub_api_token = Huggingface_api_key)
 page = "https://lilianweng.github.io/posts/2023-06-23-agent/"
 docs = load_page(page)
