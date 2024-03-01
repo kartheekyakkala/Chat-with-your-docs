@@ -1,9 +1,10 @@
 [tool.poetry]
-name = "retrieval-augmented-generation"
+name = "CHAT-WITH-YOUR-DOCS"
 version = "0.1.0"
 description = "chat with your knowledge base"
-authors = ["Kartheek Yakkala"]
+authors = ["Kartheek Yakkala <yakkalakartheek@gmail.com>"]
 readme = "README.md"
+packages = [{ include = "chat-with-your-docs" }]
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
