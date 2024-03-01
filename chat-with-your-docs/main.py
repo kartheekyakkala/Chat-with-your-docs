@@ -12,11 +12,7 @@ llm = HuggingFaceEndpoint(repo_id = repo_id, temperature = 0.5, max_new_tokens =
 page = "https://lilianweng.github.io/posts/2023-06-23-agent/"
 docs = load_page(page)
 splits  =  split_page(docs)
-print("splits done")
 vector_store = indexing_page(splits,Huggingface_api_key)
-print("vector store done")
 retrieved  = retriever(vector_store)
-print("retrieved")
 chain = generator(retrieved,llm)
-print("chained")
 print(chain.invoke("What is Task Decomposition?"))
