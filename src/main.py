@@ -6,17 +6,17 @@ from indexing import indexing_page
 from retrieve import retriever
 from generate import generator
 
-Huggingface_api_key =  getpass()
+Huggingface_api_key = "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" #getpass()
 repo_id = "meta-llama/Llama-2-7b"
 llm = HuggingFaceEndpoint(repo_id = repo_id, temperature = 0.5, max_new_tokens = 128, huggingfacehub_api_token = Huggingface_api_key)
 page = "https://lilianweng.github.io/posts/2023-06-23-agent/"
 docs = load_page(page)
 splits  =  split_page(docs)
-vector_store = indexing_page(splits)
+print("splits done")
+vector_store = indexing_page(splits,Huggingface_api_key)
+print("vector store done")
 retrieved  = retriever(vector_store)
+print("retrieved")
 chain = generator(retrieved,llm)
-
-for chunk in chain.stream("What is Task Decomposition?"):
-    print(chunk, end="", flush=True)
-
-
+print("chained")
+print(chain.invoke("What is Task Decomposition?"))
