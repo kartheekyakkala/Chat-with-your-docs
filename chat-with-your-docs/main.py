@@ -16,7 +16,9 @@ if choice in [1,2]:
     if choice == 1:
         print("This assumes you have placed required files in chat-with-your-docs/data folder.")
         docs = load_docs("chat-with-your-docs/data")
-    docs = load_page(page)
+    if choice == 2:
+        page = str(input('Please provide website/page URL'))
+        docs = load_page(page)
     splits  =  split_page(docs)
     vector_store = indexing_page(splits,Huggingface_api_key)
     retrieved  = retriever(vector_store)
