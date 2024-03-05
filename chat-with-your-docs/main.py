@@ -9,15 +9,14 @@ from generate import generator
 Huggingface_api_key = getpass()
 repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 llm = HuggingFaceEndpoint(repo_id = repo_id, temperature = 0.5, max_new_tokens = 128, huggingfacehub_api_token = Huggingface_api_key)
-page = "https://lilianweng.github.io/posts/2023-06-23-agent/"
 print("Choose your Knowledge base: \n If your knowledge base is in the form of Documents, choose 1 \n If your knowledge base is a website choose 2.")
 choice = int(input('Enter your choice:'))
 if choice in [1,2]:
     if choice == 1:
         print("This assumes you have placed required files in chat-with-your-docs/data folder.")
-        docs = load_docs("chat-with-your-docs/data")
+        docs = load_docs("/chat-with-your-docs/data")
     if choice == 2:
-        page = str(input('Please provide website/page URL'))
+        page = str(input('Please provide website/page URL: '))
         docs = load_page(page)
     splits  =  split_page(docs)
     vector_store = indexing_page(splits,Huggingface_api_key)
