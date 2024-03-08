@@ -6,7 +6,7 @@ from indexing import indexing_page
 from retrieve import retriever
 from generate import generator
 
-Huggingface_api_key = "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" #getpass()
+Huggingface_api_key = getpass()
 repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 llm = HuggingFaceEndpoint(repo_id = repo_id, temperature = 0.5, max_new_tokens = 128, huggingfacehub_api_token = Huggingface_api_key)
 print("Choose your Knowledge base: \n If your knowledge base is in the form of Documents, choose 1 \n If your knowledge base is a website choose 2.")
