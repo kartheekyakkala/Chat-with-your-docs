@@ -7,13 +7,14 @@ readme = "README.md"
 packages = [{ include = "chat-with-your-docs" }]
 
 [tool.poetry.dependencies]
-python = "^3.8.1"
+python = ">=3.9,<3.12"
 transformers = "^4.38.1"
 langchain = "^0.1.9"
 huggingface-hub = "^0.21.2"
 bs4 = "^0.0.2"
 chromadb = "^0.4.24"
 langchainhub = "^0.1.14"
+unstructured = "^0.12.5"
 
 
 [build-system]

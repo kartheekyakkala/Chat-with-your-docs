@@ -1,18 +1,15 @@
 import bs4
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import PyPDFLoader
+
 
 # Only keep post title, headers, and content from the full HTML.
 def load_page(page):
-    bs4_strainer = bs4.SoupStrainer(class_=("post-title", "post-header", "post-content"))
-    loader = WebBaseLoader(
-        web_paths=(page,),
-        bs_kwargs={"parse_only": bs4_strainer},
-    )
+    loader = WebBaseLoader(page)
     docs = loader.load()
     return docs
 
-def load_docs(folder):
-    loader = DirectoryLoader(folder)
+def load_pdf(path):
+    loader = PyPDFLoader(path)
     docs = loader.load()
     return docs
