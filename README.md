@@ -33,4 +33,5 @@ poetry run python chat-with-your-docs/main.py
 
 This repo uses LangChain as framework to integrate with open source LLM and Retreival Augmented Generation (RAG) Technique to add context from knowledge base as prompt to the LLM.
 
+If you're interested in learning more about RAG, you can explore my blog post by clicking [here .](https://medium.com/@yakkalakartheek/retrieval-augmented-generation-rag-using-open-source-llms-805184b0fe58)
 
