@@ -9,7 +9,7 @@ Don't forget to star our repository if liked it :) .
 Before you begin, this repository uses LLM models and embedding models from hugging face through inference api. You need to have huggingface token to move forward. It is free of cost and can be created here [Link](https://huggingface.co/settings/tokens) .
 
 
-Clone our repository:
+Clone repository:
 ```bash
 git clone https://github.com/kartheekyakkala/Chat-with-your-docs.git
 ```
