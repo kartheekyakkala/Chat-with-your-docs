@@ -1,4 +1,4 @@
-## Chat with your docs
+# ⚡Chat with your docs ⚡
 
 Have you ever wondered, if there's a way to summarise your docs obtain answers from a knowledge base that may not be accessible to chat assistants? We've addressed that challenge for you! With "Chat-with-your-docs", you can simply upload your document or provide a website link. Our assistant will be able to answers based on the provided documents in no time. 
 
